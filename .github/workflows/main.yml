@@ -5,7 +5,7 @@ on:
     branches: master
 
   schedule:
-    - cron: "30 19 * * *" # 1am IST
+    - cron: "0 15 * * *"
 
 jobs:
   log-data:
