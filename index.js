@@ -57,8 +57,8 @@ async function initGoogleSheet() {
 async function addProjectRows(projects = []) {
   if (!projects.length) return;
   console.log("INIT: logging project data to google sheets");
-  // append date in dd-MM-yyyy formate
-  const date = format(parsedDate, "dd-MM-yyyy");
+  // append date in yyyy-MM-dd formate
+  const date = format(parsedDate, "yyyy-MM-dd");
   projects = projects.map((p) => Object.assign(p, { date, day }));
 
   // insert data to sheet
@@ -71,9 +71,9 @@ async function addProjectRows(projects = []) {
 async function addLanguagesRows(languages = []) {
   console.log("INIT: logging langauges data to google sheets");
   if (!languages.length) return;
-  // append date in dd-MM-yyyy formate
+  // append date in yyyy-MM-dd formate
   let parsedDate = parseISO(yesterday);
-  const date = format(parsedDate, "dd-MM-yyyy");
+  const date = format(parsedDate, "yyyy-MM-dd");
   languages = languages.map((p) => Object.assign(p, { date, day }));
 
   // insert data to sheet
